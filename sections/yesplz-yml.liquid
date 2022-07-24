@@ -1,0 +1,32 @@
+{% schema %}
+{
+  "name": "YesPlz AI Recommendations",
+  "settings": [{
+    "id": "yesplz_show_recommendations",
+    "type": "checkbox",
+    "label": "Show recommendations",
+    "default": true
+  }]
+}
+{% endschema %}
+<div
+  class="page-width"
+  id="yesplz-recommended-products"
+  style="display: none;"
+  data-product-id="{{ product.id }}"
+  data-slider-settings=''
+  data-show-recommendations='{{ section.settings.yesplz_show_recommendations }}'
+  ></div>
+<script id="yesplz-recommended-product-template" type="text/x-liquid">
+  {% render 'yesplz-recommended-product-grid.liquid' %}
+</script>
+<script type="text/javascript">
+  if (window.location.search && window.location.search.indexOf('yesplz_preview=Y') > -1) {
+    var section = document.getElementById('shopify-section-product');
+    if (section) {
+      section.style.display = 'none';
+    }
+  }
+</script>
+<script type="text/javascript" async src="https://code.yesplz.ai/splatform/v1/shop/yml.js?shop=naudic.myshopify.com"></script>
+{% stylesheet 'scss' %}{% endstylesheet %}

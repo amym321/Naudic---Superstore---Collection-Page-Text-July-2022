@@ -1,0 +1,13 @@
+{%- assign product = all_products[key] -%}
+
+<li class="product best-seller">
+  <a href="{{ product.url }}">
+    <div class="best-seller-image">
+      <img src="{{ product | img_url: "medium" }}" />
+    </div>
+    <div class="best-seller-info">
+      {{ product.title }}
+      <div>{{ product.price | money }}</div>
+    </div>
+  </a>
+</li>

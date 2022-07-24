@@ -1,0 +1,91 @@
+{% assign image = 'image_' | append: id %}
+{% assign text = 'text_' | append: id %}
+{% assign image_title = 'image_title_' | append: id %}
+{% assign url = 'link_' | append: id %}
+{% assign position = 'position_' | append: id %}
+{% assign size = 'size_' | append: id %}
+
+{% assign image = settings[image] %}
+{% assign text = settings[text] %}
+{% assign image_title = settings[image_title] %}
+{% assign url = settings[url] %}
+{% assign position = settings[position] %}
+{% assign size = settings[size] %}
+
+
+{% if image != blank %}
+  <li
+    class="
+      navmenu-meganav--image-container
+      navmenu-meganav--image-{{ position }}
+    "
+  >
+    {% comment %}
+    <!-- Remove link from image -->
+    {% if url %}
+      <a class="navmenu-meganav--image-link" href="{{ url | downcase }}">
+    {% endif %}
+    {% endcomment %}
+    
+    {% comment %}<a href="{{ url | escape }}" class="navmenu-item-text navmenu-link-parent image_title">{{ image_title | escape }}</a>{% endcomment %}
+    <span class="navmenu-item-text navmenu-link-parent image_title">{{ image_title | escape }}</span>
+    
+      {% capture image_classes %}
+        navmenu-meganav--image
+        navmenu-meganav--image-size-{{ size }}
+      {% endcapture %}
+      {% if size == 'small' %}
+        {% assign image_width = '280x' %}
+      {% elsif size == 'medium' %}
+        {% assign image_width = '300x' %}
+      {% else %}
+        {% assign image_width = '400x' %}
+      {% endif %}
+        
+      <a href="{{ url | downcase }}">  
+        {%
+          include 'rimg',
+          img: image,
+          class: image_classes,
+          size: image_width,
+          alt: text
+        %}
+      </a>
+        
+     {% if text != blank %}
+      <!-- <p class="navmenu-meganav--image-text"> -->
+        {% if url %}
+          <a class="navmenu-meganav--image-link" href="{{ url | downcase }}">
+        {% endif %}
+            {{ text | escape }}
+        {% if url %}
+          <span class="text_with_img">{{ 'feather.svg' | asset_url | img_tag }}</span></a>
+        {% endif %}
+      <!-- </p> -->
+    {% endif %}
+        
+    {% comment %}
+    <!-- Remove link from image -->    
+    {% if url %}
+      </a>
+    {% endif %}
+    {% endcomment %}
+	
+    
+    {% comment %}
+    {% if text != blank %}
+      <p class="navmenu-meganav--image-text">
+        {% if url %}
+        <a class="navmenu-meganav--image-link" href="{{ url | downcase }}">
+        {% endif %}
+          {{ text | escape }}
+        {% if url %}
+          </a>
+        {% endif %}
+      </p>
+    {% endif %}
+    
+    {% endcomment %}
+    
+  </li>
+{% endif %}

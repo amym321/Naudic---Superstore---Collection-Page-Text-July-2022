@@ -1,0 +1,61 @@
+
+{% raw %}
+<div class="grid-view-item product-card">
+  <a
+     class="grid-view-item__link grid-view-item__image-container full-width-link"
+     href="{{ product.url }}"
+     data-product-id="{{ product.id }}"
+  >
+	<span class="visually-hidden">{{ product.title }}</span>
+  </a>
+  <div class="product-card__image-with-placeholder-wrapper">
+    <div class="grid-view-item__image-wrapper product-card__image-wrapper js">
+      <img src="{{ product.imgSrc }}" alt="{{ product.title }}" />
+    </div>
+  </div>
+  <div class="h5 grid-view-item__title product-card__title product-card__title-small">
+    {{ product.vendor }}
+  </div>
+  <div class="h4 grid-view-item__title product-card__title product-card__title--main">
+    {{ product.title }}
+  </div>
+  {% if product.originalPrice and product.price != product.originalPrice %}
+  <dl class="price price--listing price--on-sale">
+	<div class="price__sale">
+      <dt>
+        <span class="visually-hidden visually-hidden--inline">Sale price</span>
+      </dt>
+      <dd>
+        <span class="price-item price-item--sale">${{ product.price }}</span>
+      </dd>
+      <div class="price__compare">
+      	<dt>
+          <span class="visually-hidden visually-hidden--inline">Regula price</span>
+        </dt>
+        <dd>
+          <s class="price-item price-item--regular">
+            ${{ product.originalPrice }}
+          </s>
+        </dd>
+      </div>
+  	</div>
+    <div class="price__badges price__badges--listing">
+      <span class="price__badge price__badge--sale" aria-hidden="true">
+        <span>Sale</span>
+      </span>
+    </div>
+  </dl>
+  {% else  %}
+  <dl class="price price--listing">
+    <div class="price__regular">
+	  <dt>
+        <span class="visually-hidden visually-hidden--inline">Regular price</span>
+      </dt>
+      <dd>
+        <span class="price-item price-item--regular">${{ product.price }}</span>
+      </dd>
+  	</div>
+  </dl>
+  {% endif %}
+</div>
+{% endraw %}

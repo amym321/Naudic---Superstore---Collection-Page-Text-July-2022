@@ -1,0 +1,31 @@
+{% assign image = 'image' %}
+{% assign text = 'text'  %}
+{% assign image_title = 'image_title' %}
+{% assign url = 'link'  %}
+{% assign position = 'position' %}
+{% assign size = 'size' %}
+
+{% assign image = settings[image] %}
+{% assign text = settings[text] %}
+{% assign image_title = settings[image_title] %}
+{% assign url = settings[url] %}
+{% assign position = settings[position] %}
+{% assign size = settings[size] %}
+
+{% if image != blank %}
+<div class="new-collection-wrapper">
+<div class="new-collection-title title">New Collection: Into the Wild</div>
+<div class="new-collection-image">
+
+  {%
+        include 'rimg',
+        img: image,
+        class: image_classes,
+        size: image_width,
+        alt: text
+      %}
+
+  <div class="new-collection-text">{{ text | escape }} <img class="a-feather" src="{{ 'feather.svg' | asset_url }}" alt="{{ shop.name }}"/></div>
+</div>
+</div>
+{% endif %}

@@ -1,0 +1,580 @@
+<!-- additional Slides CSS -->
+<style>
+  .left-banner {
+    background-image: url({{ section.settings.left_banner_img | img_url: '244x554' }}); 
+    background-size: contain; 
+    background-position: center; 
+    position: relative; 
+  }
+  
+  .best-sellers-banner {
+    width: {{ section.settings.best_sellers_width }}%;
+    background-image: url({{ section.settings.best_sellers_img | img_url: '244x554' }}); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+  }
+ 
+  .outlet-banner {
+    width: {{ section.settings.outlet_width }}%;  
+    background-image: url({{ section.settings.outlet_img | img_url: '244x554' }}); 
+    background-size: cover; 
+    background-position: center; 
+    position: relative;
+  }
+  */
+  
+   
+</style>
+<!-- additional Slides CSS -->
+
+<div id="core-banners" class="hide-mobile">
+{% if section.settings.best_sellers %}
+<section class="left-banner">
+  
+  <div
+          class="
+            slideshow-background
+            slideshow-background--{{ block.id }}
+            slideshow-height-{{ section.settings.slideshow_height }}
+            {% if section.settings.left_banner_img == blank %}
+              placeholder--image
+            {% endif %}
+          "
+          {% if section.settings.left_banner_img %}
+            {%
+              include 'rimg',
+              img: section.settings.left_banner_img,
+              size: '244x554',
+              crop: bottom,
+              lazy: settings.lazy_load,
+              background: true,
+          	  style: "background-size: cover;"
+            %}
+          {% else %}
+            style="background-image: url('{{ placeholder_slide_image | strip }}')"
+          {% endif %}
+        >
+    	{% if section.settings.left_banner_link %}
+    		<a href="{{ section.settings.left_banner_link }}">
+    	{% endif %}
+          {% if section.settings.left_banner_img %}
+            {%
+              include 'rimg',
+              img: section.settings.left_banner_img,
+              class: 'slideshow-image',
+              size: '244x554',
+              crop: bottom,
+              lazy: settings.lazy_load,
+              canvas: settings.lazy_load,
+   			  style: "background-size: cover;"
+            %}
+          {% if section.settings.left_banner_link %}
+		    </a>
+    	  {% endif %}
+    
+          {% else %}
+            <img
+              class="slideshow-image"
+              src="{{ placeholder_slide_image | strip }}"
+              alt=""
+            >
+          {% endif %}
+    	{% if section.settings.left_banner_link %}
+    		</a>
+    	{% endif %}
+        </div>
+ 
+
+  </section>
+{% endif %}
+
+{% if section.settings.best_sellers %}
+<section class="best-sellers-banner">
+  
+  <div
+          class="
+            slideshow-background
+            slideshow-background--{{ block.id }}
+            slideshow-height-{{ section.settings.slideshow_height }}
+            {% if section.settings.best_sellers_img == blank %}
+              placeholder--image
+            {% endif %}
+          "
+          {% if section.settings.best_sellers_img %}
+            {%
+              include 'rimg',
+              img: section.settings.best_sellers_img,
+              size: '244x554',
+              crop: slideshow_crop,
+              lazy: settings.lazy_load,
+              background: true,
+          	  style: "background-size: cover;"
+            %}
+          {% else %}
+            style="background-image: url('{{ placeholder_slide_image | strip }}')"
+          {% endif %}
+        >
+              
+          {% if section.settings.best_sellers_img %}
+            {% if section.settings.best_seller_link != blank %}
+                <a href="{{ section.settings.best_seller_link }}">
+            {% endif %}
+            {%
+              include 'rimg',
+              img: section.settings.best_sellers_img,
+              class: 'slideshow-image',
+              size: '244x554',
+              crop: slideshow_crop,
+              lazy: settings.lazy_load,
+              canvas: settings.lazy_load,
+       		  style: "background-size: cover;"
+            %}
+            {% if section.settings.best_seller_link != blank %}
+              </a>
+            {% endif %}
+    	
+            {% if section.settings.best_seller_text != blank %}
+            <a class="label" href="{{ section.settings.best_seller_link }}">{{ section.settings.best_seller_text }}</a>
+            {% endif %}
+    
+          {% else %}
+            <img
+              class="slideshow-image"
+              src="{{ placeholder_slide_image | strip }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+ 
+
+  </section>
+{% endif %}
+
+{% if section.settings.outlet %}
+<section class="outlet-banner">
+  
+  <div
+          class="
+            slideshow-background
+            slideshow-background--{{ block.id }}
+            slideshow-height-{{ section.settings.slideshow_height }}
+            {% if section.settings.outlet_img == blank %}
+              placeholder--image
+            {% endif %}
+          "
+          {% if section.settings.outlet_img %}
+            {%
+              include 'rimg',
+              img: section.settings.outlet_img,
+              size: '244x554',
+              crop: slideshow_crop,
+              lazy: settings.lazy_load,
+              background: true,
+          	  style: "background-size: cover;"
+            %}
+          {% else %}
+            style="background-image: url('{{ placeholder_slide_image | strip }}')"
+          {% endif %}
+        >
+          {% if section.settings.outlet_img %}
+            {% if section.settings.outlet_link != blank %}
+              <a href="{{ section.settings.outlet_link }}">
+            {% endif %}
+            {%
+              include 'rimg',
+              img: section.settings.outlet_img,
+              class: 'slideshow-image',
+              size: '244x554',
+              crop: slideshow_crop,
+              lazy: settings.lazy_load,
+              canvas: settings.lazy_load,
+       	      style: "background-size: cover;"
+            %}
+
+            {% if section.settings.outlet_link != blank %}
+              </a>
+            {% endif %}
+    	
+            {% if section.settings.outlet_text != blank %}
+              <a class="label" href="{{ section.settings.outlet_link }}">{{ section.settings.outlet_text }}</a>
+            {% endif %}
+          {% else %}
+            <img
+              class="slideshow-image"
+              src="{{ placeholder_slide_image | strip }}"
+              alt=""
+            >
+        {% endif %}
+
+        </div>
+  
+ 
+  
+</section>
+
+  {% endif %}
+
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Desktop Slideshow",
+  "class": "slideshow--section",
+  "settings": [
+    {
+      "id": "show_slideshow",
+      "type": "checkbox",
+      "label": "Enable slideshow",
+      "default": true
+    },
+    {
+      "id": "enable_autoplay",
+      "type": "checkbox",
+      "label": "Autoplay slideshow",
+      "default": false
+    },
+    {
+      "id": "autoplay_duration",
+      "type": "range",
+      "label": "Autoplay slide duration",
+      "min": 5,
+      "max": 12,
+      "step": 1,
+      "unit": "sec",
+      "default": 8
+    },
+    {
+      "id": "slideshow_height",
+      "type": "select",
+      "label": "Slideshow height",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fullscreen",
+          "label": "Fullscreen"
+        },
+        {
+          "value": "original",
+          "label": "Original aspect ratio"
+        }
+      ],
+      "default": "medium"
+    },
+	{
+      "id": "left_banner_width",
+      "type": "number",
+      "label": "Slideshow width(in %)",
+	   "default": 60
+    },
+	{
+      "id": "left_banner_img",
+      "type": "image_picker",
+      "label": "Left Banner image"
+    },
+	{
+      "id": "left_banner_link",
+      "type": "url",
+      "label": "Left Banner Link"
+    },
+	{
+      "id": "best_sellers",
+      "type": "checkbox",
+      "label": "Enable Best-Seller Banner",
+      "default": true
+    },
+	{
+        "type": "image_picker",
+        "id": "best_sellers_img",
+        "label": "Best-Seller Banner"
+    }, 
+	{
+    "type": "text",
+    "id": "best_seller_text",
+    "label": "Best Seller Text",
+	"default": "Best Sellers"
+    },
+    {
+    "type": "url",
+    "id": "best_seller_link",
+    "label": "Best Seller Link"
+    },
+	{
+      "id": "best_sellers_width",
+      "type": "number",
+      "label": "Best Seller width(in %)",
+	   "default": 20
+    },
+	{
+      "id": "outlet",
+      "type": "checkbox",
+      "label": "Enable Outlet Banner",
+      "default": true
+    },
+	{
+        "type": "image_picker",
+        "id": "outlet_img",
+        "label": "Outlet Banner"
+    },
+	{
+    "type": "text",
+    "id": "outlet_text",
+    "label": "Outlet Text",
+	"default": "Outlet"
+    },
+    {
+    "type": "url",
+    "id": "outlet_link",
+    "label": "Outlet Link"
+    },
+	{
+      "id": "outlet_width",
+      "type": "number",
+      "label": "Outlet Banner width(in %)",
+	   "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "background_image",
+          "type": "image_picker",
+          "label": "Background image",
+          "info": "1800x1000 recommended"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading",
+          "default": "Slide"
+        },
+        {
+          "id": "text",
+          "type": "text",
+          "label": "Subheading",
+          "default": "Introduce customers to your shop with lifestyle and product imagery"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Text color",
+          "default": "#FFFFFF"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Background link"
+        },
+        {
+          "id": "text_alignment",
+          "type": "select",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "header",
+          "content": "Button 1"
+        },
+        {
+          "id": "button_one_label",
+          "type": "text",
+          "label": "Label",
+          "default": "Button"
+        },
+        {
+          "id": "button_one_link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "button_one_style",
+          "type": "select",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Button 2"
+        },
+        {
+          "id": "button_two_label",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "button_two_link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "button_two_style",
+          "type": "select",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Button 3"
+        },
+        {
+          "id": "button_three_label",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "button_three_link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "button_three_style",
+          "type": "select",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Button 4"
+        },
+        {
+          "id": "button_four_label",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "button_four_link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "button_four_style",
+          "type": "select",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Overlay"
+        },
+        {
+          "type":      "select",
+          "id":        "overlay_style",
+          "label":     "Overlay style",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "gradient",
+              "label": "Gradient"
+            }
+          ],
+          "default":   "solid"
+        },
+        {
+          "id": "overlay_color",
+          "type": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "id": "overlay_opacity",
+          "type": "range",
+          "label": "Opacity",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "slide"
+      },
+      {
+        "type": "slide"
+      }
+    ]
+  }
+}
+
+{% endschema %}

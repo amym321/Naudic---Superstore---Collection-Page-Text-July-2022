@@ -1,0 +1,262 @@
+<script
+  type="application/json"
+  data-section-id="{{ section.id }}"
+  data-section-type="static-announcement">
+</script>
+
+{% assign show_everywhere = false %}
+{% assign homepage_only = false %}
+
+{% if
+  section.settings.show_announcement and
+  section.settings.homepage_announcement == false
+%}
+  {% assign show_everywhere = true %}
+{% endif %}
+
+{% if
+  section.settings.show_announcement and
+  section.settings.homepage_announcement and
+  template == 'index'
+%}
+  {% assign homepage_only = true %}
+{% endif %}
+
+{% if show_everywhere or homepage_only %}
+  {% if
+    section.settings.announcement_text != blank or
+    section.settings.announcement_text_mobile != blank
+  %}
+
+    <style>
+      .announcement-bar-text-bf {
+        padding-top: 0 !important;
+      }
+      .announcement-bar-text-mobile .marquee {
+        top: -10px;
+      }
+      .announcement-bar-text-mobile .marquee div {
+        width: 150%;
+      }
+      .marquee {
+        height: 35px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .marquee div {
+        font-size: 1.2em;
+        color: whitesmoke;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 35px;
+        text-align: center;
+        /* Starting position */
+        -moz-transform:translateX(100%);
+        -webkit-transform:translateX(100%);
+        transform:translateX(100%);
+        /* Apply animation to this element */
+        -moz-animation: marquee 15s linear infinite;
+        -webkit-animation: marquee 15s linear infinite;
+        animation: marquee 15s linear infinite;
+      }
+      .marquee div span{
+        margin-right:50px;
+      }
+      /* Move it (define the animation) */
+      @-moz-keyframes marquee {
+        0%   { -moz-transform: translateX(100%); }
+        100% { -moz-transform: translateX(-100%); }
+      }
+      @-webkit-keyframes marquee {
+        0%   { -webkit-transform: translateX(100%); }
+        100% { -webkit-transform: translateX(-100%); }
+      }
+      @keyframes marquee {
+        0%   {
+          -moz-transform: translateX(100%); /* Firefox bug fix */
+          -webkit-transform: translateX(100%); /* Firefox bug fix */
+          transform: translateX(100%);
+        }
+        100% {
+          -moz-transform: translateX(-100%); /* Firefox bug fix */
+          -webkit-transform: translateX(-100%); /* Firefox bug fix */
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+
+    <div
+      class="
+        announcement-bar
+        {% if section.settings.announcement_text == blank and section.settings.announcement_text_mobile != blank %}
+          only-mobile
+        {% endif %}
+      "
+      style="
+        color: {{ section.settings.announcement_color }};
+        background: {{ section.settings.announcement_background }};
+        height:30px;
+      ">
+      
+      <div class="announce_container">
+      
+      <div class="left-announcement-bar hide-mobile">
+	    <div class="left-svg"><svg xmlns="http://www.w3.org/2000/svg" width="30.468" height="30.47" viewBox="0 0 30.468 30.47"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(14.342 -0.089) rotate(42)"><g transform="translate(0.134 0)"><path class="a" d="M21.415.05a.5.5,0,0,0-.568.091,26.167,26.167,0,0,1-6.081,4.269.5.5,0,0,0-.257.324,10.883,10.883,0,0,1-1.394,3.061l-.279.443.52-2.266a.5.5,0,0,0-.689-.577l-.06.025C6.7,7.907,4.952,11.76,4.437,13.835a8.665,8.665,0,0,0-.265,2.12,6.6,6.6,0,0,0,.044.754L.278,20.725a.5.5,0,0,0,.7.729L11.8,11.734c.053,0-6.162,6.514-6.106,6.514a7.8,7.8,0,0,0,3.37-1.124,30.551,30.551,0,0,0,5.931-4.4.5.5,0,0,0-.455-.862l-1.267.291.443-.279A10.257,10.257,0,0,1,17.146,10.4a.5.5,0,0,0,.289-.169,18.275,18.275,0,0,0,3.93-7.637A15.119,15.119,0,0,0,21.7.55.5.5,0,0,0,21.415.05Z" transform="translate(-0.134 0)"/></g></g></svg> </div>
+        <div class="rgt-text">
+          <span>New Collection:</span>
+          <a href="{{ section.settings.new_collection_link }}"> {{ section.settings.new_collection_text }}</a>
+        </div>
+       
+      </div>
+      
+      {% if section.settings.announcement_link != blank %}
+        <a
+          class="announcement-bar-link"
+          href="{{ section.settings.announcement_link }}"
+          ></a>
+      {% endif %}
+
+      {% if section.settings.black_friday_banner %}
+        <div class="announcement-bar-text announcement-bar-text-bf">
+           <div class="marquee">
+                <div>
+                  <span>{{ section.settings.announcement_text_bf_left }}</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="15.542" height="11.153" viewBox="0 0 15.542 11.153"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(0 -61.712)"><path class="a" d="M14.8,69.888,8.376,65.863v-.3a.532.532,0,0,1,.288-.452c.024-.016.053-.034.085-.053a1.7,1.7,0,0,0,.962-1.487,1.92,1.92,0,0,0-1.511-1.8,2,2,0,0,0-2.518,2c0,.045,0,.142,0,.237,0,.131.257.237.576.237H6.37c.319,0,.578-.106.579-.237,0-.108,0-.217,0-.237.018-.43.133-.683.572-.771a.849.849,0,0,1,.74.19.438.438,0,0,1,.108.345.507.507,0,0,1-.219.38l-.551.375a.969.969,0,0,0-.5.9v.673L.74,69.874a1.628,1.628,0,0,0,1,2.991H13.879a1.621,1.621,0,0,0,1.6-1.144A1.652,1.652,0,0,0,14.8,69.888Zm-.653,1.4a.3.3,0,0,1-.289.221H1.727a.3.3,0,0,1-.293-.205.288.288,0,0,1,.126-.326l6.219-3.892L14.031,71A.25.25,0,0,1,14.15,71.289Z" transform="translate(0 0)" stroke-width="0.2px"/></g></svg></span>
+                  <span>{{ section.settings.announcement_text_bf_right }}</span>
+                </div>
+           </div>
+        </div>
+      {% else %}
+        <div class="announcement-bar-text">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="15.542" height="11.153" viewBox="0 0 15.542 11.153"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(0 -61.712)"><path class="a" d="M14.8,69.888,8.376,65.863v-.3a.532.532,0,0,1,.288-.452c.024-.016.053-.034.085-.053a1.7,1.7,0,0,0,.962-1.487,1.92,1.92,0,0,0-1.511-1.8,2,2,0,0,0-2.518,2c0,.045,0,.142,0,.237,0,.131.257.237.576.237H6.37c.319,0,.578-.106.579-.237,0-.108,0-.217,0-.237.018-.43.133-.683.572-.771a.849.849,0,0,1,.74.19.438.438,0,0,1,.108.345.507.507,0,0,1-.219.38l-.551.375a.969.969,0,0,0-.5.9v.673L.74,69.874a1.628,1.628,0,0,0,1,2.991H13.879a1.621,1.621,0,0,0,1.6-1.144A1.652,1.652,0,0,0,14.8,69.888Zm-.653,1.4a.3.3,0,0,1-.289.221H1.727a.3.3,0,0,1-.293-.205.288.288,0,0,1,.126-.326l6.219-3.892L14.031,71A.25.25,0,0,1,14.15,71.289Z" transform="translate(0 0)" stroke-width="0.2px"/></g></svg></span>{{ section.settings.announcement_text }}
+        </div>
+      {% endif %}
+
+      <div class="announcement-bar-text-mobile announcement-bar-text-bf">
+        {% if section.settings.announcement_text_mobile != blank %}
+          {% if section.settings.black_friday_banner %}
+            <div class="marquee">
+              <div>
+                <span>{{ section.settings.announcement_text_bf_left }}</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="15.542" height="11.153" viewBox="0 0 15.542 11.153"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(0 -61.712)"><path class="a" d="M14.8,69.888,8.376,65.863v-.3a.532.532,0,0,1,.288-.452c.024-.016.053-.034.085-.053a1.7,1.7,0,0,0,.962-1.487,1.92,1.92,0,0,0-1.511-1.8,2,2,0,0,0-2.518,2c0,.045,0,.142,0,.237,0,.131.257.237.576.237H6.37c.319,0,.578-.106.579-.237,0-.108,0-.217,0-.237.018-.43.133-.683.572-.771a.849.849,0,0,1,.74.19.438.438,0,0,1,.108.345.507.507,0,0,1-.219.38l-.551.375a.969.969,0,0,0-.5.9v.673L.74,69.874a1.628,1.628,0,0,0,1,2.991H13.879a1.621,1.621,0,0,0,1.6-1.144A1.652,1.652,0,0,0,14.8,69.888Zm-.653,1.4a.3.3,0,0,1-.289.221H1.727a.3.3,0,0,1-.293-.205.288.288,0,0,1,.126-.326l6.219-3.892L14.031,71A.25.25,0,0,1,14.15,71.289Z" transform="translate(0 0)" stroke-width="0.2px"/></g></svg></span>
+                <span>{{ section.settings.announcement_text_bf_right }}</span>
+              </div>
+            </div>
+          {%  else %}
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="15.542" height="11.153" viewBox="0 0 15.542 11.153"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(0 -61.712)"><path class="a" d="M14.8,69.888,8.376,65.863v-.3a.532.532,0,0,1,.288-.452c.024-.016.053-.034.085-.053a1.7,1.7,0,0,0,.962-1.487,1.92,1.92,0,0,0-1.511-1.8,2,2,0,0,0-2.518,2c0,.045,0,.142,0,.237,0,.131.257.237.576.237H6.37c.319,0,.578-.106.579-.237,0-.108,0-.217,0-.237.018-.43.133-.683.572-.771a.849.849,0,0,1,.74.19.438.438,0,0,1,.108.345.507.507,0,0,1-.219.38l-.551.375a.969.969,0,0,0-.5.9v.673L.74,69.874a1.628,1.628,0,0,0,1,2.991H13.879a1.621,1.621,0,0,0,1.6-1.144A1.652,1.652,0,0,0,14.8,69.888Zm-.653,1.4a.3.3,0,0,1-.289.221H1.727a.3.3,0,0,1-.293-.205.288.288,0,0,1,.126-.326l6.219-3.892L14.031,71A.25.25,0,0,1,14.15,71.289Z" transform="translate(0 0)" stroke-width="0.2px"/></g></svg></span>{{ section.settings.announcement_text_mobile }}
+          {% endif %}
+        {% else %}
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="15.542" height="11.153" viewBox="0 0 15.542 11.153"><defs><style>.a{fill:#fff;}</style></defs><g transform="translate(0 -61.712)"><path class="a" d="M14.8,69.888,8.376,65.863v-.3a.532.532,0,0,1,.288-.452c.024-.016.053-.034.085-.053a1.7,1.7,0,0,0,.962-1.487,1.92,1.92,0,0,0-1.511-1.8,2,2,0,0,0-2.518,2c0,.045,0,.142,0,.237,0,.131.257.237.576.237H6.37c.319,0,.578-.106.579-.237,0-.108,0-.217,0-.237.018-.43.133-.683.572-.771a.849.849,0,0,1,.74.19.438.438,0,0,1,.108.345.507.507,0,0,1-.219.38l-.551.375a.969.969,0,0,0-.5.9v.673L.74,69.874a1.628,1.628,0,0,0,1,2.991H13.879a1.621,1.621,0,0,0,1.6-1.144A1.652,1.652,0,0,0,14.8,69.888Zm-.653,1.4a.3.3,0,0,1-.289.221H1.727a.3.3,0,0,1-.293-.205.288.288,0,0,1,.126-.326l6.219-3.892L14.031,71A.25.25,0,0,1,14.15,71.289Z" transform="translate(0 0)" stroke-width="0.2px"/></g></svg></span>{{ section.settings.announcement_text }}
+        {% endif %}
+      </div>
+      
+      <div class="right-announcement-bar hide-mobile">
+        <ul>          
+          {% for block in section.blocks %}
+          <li><a href="{{ block.settings.link }}">{{ block.settings.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      </div>
+    </div>
+
+{% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "class": "site-announcement",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement"
+    },
+    {
+      "type": "checkbox",
+      "id": "homepage_announcement",
+      "label": "Show on home page only"
+    },
+	{
+      "id": "new_collection_text",
+      "type": "text",
+      "label": "New Collection Text"
+    },
+    {
+      "id": "new_collection_link",
+      "type": "url",
+      "label": "New Collection Link"
+    },
+    {
+      "id": "announcement_text",
+      "type": "textarea",
+      "label": "Text"
+    },
+    {
+      "id": "announcement_text_mobile",
+      "type": "textarea",
+      "label": "Alternate mobile text (optional)",
+      "info": "We recommend providing a shortened version of long announcements for smaller screens."
+    },
+    {
+      "id": "announcement_link",
+      "type": "url",
+      "label": "Link"
+    },
+    {
+      "id": "announcement_color",
+      "type": "color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "id": "announcement_background",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "black_friday_banner",
+      "label": "Black Friday Banner"
+    },
+    {
+      "id": "announcement_text_bf_left",
+      "type": "textarea",
+      "label": "Text (Black Friday Marquee - Left)"
+    },
+    {
+      "id": "announcement_text_bf_right",
+      "type": "textarea",
+      "label": "Text (Black Friday Marquee - Right)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "links",
+      "name": "Top Links",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Top Text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        }
+        
+      ]
+    }
+  ]
+}
+
+{% endschema %}

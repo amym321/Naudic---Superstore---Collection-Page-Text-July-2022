@@ -1,0 +1,3821 @@
+// 
+
+// 
+//   
+// 
+
+// 
+// 
+// 
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.e9c2ec7697570c33b13645dbd15f3f729c5e921b.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=1b5e5e5a09c73c5129828e74c23a92cbc808635b1504c027a46b233568cac4c4") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.f481a31eaff8b48749cc413f5c6990b1db3c9103.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=d5d47c529df33fc711b7ac07ecf2997e6eb9635f916d34653ff6f7a4ce6f6264") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.0851c828f2d9e24bc7e62370e5b23fbce45a9776.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=a7d2e8ebcfb38a8dfab934b963cc59820673aaf50c5283fd339e381b29a52cc1") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.2ea997ee0b5ec44aa35a893518aa91f824531238.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=becdd91443ce244e86d76260c5d79590437d24ca41101d380c2c3dba49f32acd") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+    @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+    @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-body: type_body;
+  $type-body-family: Montserrat,sans-serif;
+  $type-body-styles: ((normal, italic), (normal, italic));
+  $type-body-named-styles: ((initial, italic), (initial, italic));
+  $type-body-weights: (300, 400);
+  $type-body-named-weights: (initial, bolder);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: "Quattrocento Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_n7.3aa8bd40fbad0fb4d493af9ef60d80c7dc39d34e.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=caf5fc439c4f85b5f4190dc48f224020425bed11f9e24bb1016a1e9879ec070a") format("woff2"),
+       url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_n7.e5214af0eb400455ab60a0d1b9aee6be554f16be.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=c5185577ac9cfbdc6822c631fa2ac429df3b1197d276939e44b0a8a03f2fd8e0") format("woff");
+}
+
+  @font-face {
+  font-family: "Quattrocento Sans";
+  font-weight: 700;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_i7.564e5b9e0e697bff7dfaf701660d797279f17606.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=72dca9d8e99b96a8c0676dee3ef38b6f4d5eed6b17eb314966a9327e06af873b") format("woff2"),
+       url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_i7.426503744cfa0a672b1956d7e2bc9a76947c65e2.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e7ec6ffc6acf10e64e379a954974a022048daee6250a0313b8e765260d89a35") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+    
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+    @font-face {
+  font-family: "Quattrocento Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_n4.b43a78e6b8b9780ef5893d83cd043417f12e0d99.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=3d017c95de26e40078a30bc9fe4a2ec0b3c8bb5ae6fdeb9e563c726eaeb72939") format("woff2"),
+       url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_n4.19c4a084d66bf65371b1784dad52aa1acf657cdd.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=6d38cb4a864e0aad7f0a84eb063ca504c80b08505e1ec8562cd0909e2b486976") format("woff");
+}
+
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+    @font-face {
+  font-family: "Quattrocento Sans";
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_i4.05e513d210c064197634a6efb30ba9f47e76338d.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0dfdedfc9aa265b8b7e449dedf9c62fbc8926ba7fbeaddb4e7444dfc4e5f4133") format("woff2"),
+       url("https://fonts.shopifycdn.com/quattrocento_sans/quattrocentosans_i4.ff64670d7818e5cbd12e36eda543508a83010303.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=c4f4e843aedc9bfa365301fd47005d4857b6b4d1e23ca2703989ae17ba2f189d") format("woff");
+}
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-heading: type_heading;
+  $type-heading-family: "Quattrocento Sans",sans-serif;
+  $type-heading-styles: ((normal, italic), (normal, italic), (normal, italic));
+  $type-heading-named-styles: ((initial, italic), (initial, italic), (initial, italic));
+  $type-heading-weights: (700, 700, 400);
+  $type-heading-named-weights: (initial, bolder, lighter);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.e9c2ec7697570c33b13645dbd15f3f729c5e921b.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=1b5e5e5a09c73c5129828e74c23a92cbc808635b1504c027a46b233568cac4c4") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.f481a31eaff8b48749cc413f5c6990b1db3c9103.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=d5d47c529df33fc711b7ac07ecf2997e6eb9635f916d34653ff6f7a4ce6f6264") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.0851c828f2d9e24bc7e62370e5b23fbce45a9776.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=a7d2e8ebcfb38a8dfab934b963cc59820673aaf50c5283fd339e381b29a52cc1") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.2ea997ee0b5ec44aa35a893518aa91f824531238.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=becdd91443ce244e86d76260c5d79590437d24ca41101d380c2c3dba49f32acd") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-button: type_button;
+  $type-button-family: Montserrat,sans-serif;
+  $type-button-styles: ((normal, italic), ());
+  $type-button-named-styles: ((initial, italic), ());
+  $type-button-weights: (300);
+  $type-button-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-menu: type_menu;
+  $type-menu-family: Montserrat,sans-serif;
+  $type-menu-styles: ((normal, italic), ());
+  $type-menu-named-styles: ((initial, italic), ());
+  $type-menu-weights: (400);
+  $type-menu-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+    @font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n7.c496e9cf2031deec4c4bca338faa81971c8631d4.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=e8c2a712a4d8720d7341016d3dbededb29db42f4be176969927cb5fd67d57f9c") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n7.78b0223375c94b39ce1af7e09a0225f2bb3d05f7.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=8a469fc947bf5e64d03a9e1ee5c5bb0bf9c178ba99b1bf2148d50ce8606c3bad") format("woff");
+}
+
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+    @font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i7.83866c3eec90071fa974c17980ffb42977f9e667.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=8ed96ddecf9e27f09c5c59e703816e3ee4d2b139c75990a8827202195692bcb7") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i7.25524241b12d864609c85325613d60efcf1a87e3.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=db0f9ef23a6169225921538406625f81cf8aee08b1d9d07b7cf6bbd9279d33a4") format("woff");
+}
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-section: type_section;
+  $type-section-family: Montserrat,sans-serif;
+  $type-section-styles: ((normal, italic), (normal, italic));
+  $type-section-named-styles: ((initial, italic), (initial, italic));
+  $type-section-weights: (400, 700);
+  $type-section-named-weights: (initial, bold);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-product-card-title: type_product_card_title;
+  $type-product-card-title-family: Montserrat,sans-serif;
+  $type-product-card-title-styles: ((normal, italic), ());
+  $type-product-card-title-named-styles: ((initial, italic), ());
+  $type-product-card-title-weights: (400);
+  $type-product-card-title-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 200;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n2.b057aa470195d13929235d899f3acdd1f02496b5.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=26d314869b495cfa8cf7e5f3057e4f2b5f47e386e96e92a04d7745f0f57ed3f6") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n2.bdb41545914820fbfc482f16d55b50960d489603.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=73d85fc5d1ab75d974cfd2dab9ea90cacd5b27c8c8f15bfcadf9d9961c63ae2f") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 200;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i2.1d9bb5c1df88d90b5c231bdba6efd41f49255b3b.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=508a3da6f62ca8e2360173eb91d5745183e73099073f063b96b904f8a76612b5") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i2.7c3322a3160125e722d6654ac3941971ca10ef6c.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=3fb90ab414e6604539b4efaff4cdae0ab1095e1ffbacf8e138cb29d903a21827") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-product-price: type_product_price;
+  $type-product-price-family: Montserrat,sans-serif;
+  $type-product-price-styles: ((normal, italic), ());
+  $type-product-price-named-styles: ((initial, italic), ());
+  $type-product-price-weights: (200);
+  $type-product-price-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-product-vendor: type_product_vendor;
+  $type-product-vendor-family: Montserrat,sans-serif;
+  $type-product-vendor-styles: ((normal, italic), ());
+  $type-product-vendor-named-styles: ((initial, italic), ());
+  $type-product-vendor-weights: (400);
+  $type-product-vendor-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-footer-heading: type_footer_heading;
+  $type-footer-heading-family: Montserrat,sans-serif;
+  $type-footer-heading-styles: ((normal, italic), ());
+  $type-footer-heading-named-styles: ((initial, italic), ());
+  $type-footer-heading-weights: (400);
+  $type-footer-heading-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-highlights-bar: type_highlights_bar;
+  $type-highlights-bar-family: Montserrat,sans-serif;
+  $type-highlights-bar-styles: ((normal, italic), ());
+  $type-highlights-bar-named-styles: ((initial, italic), ());
+  $type-highlights-bar-weights: (400);
+  $type-highlights-bar-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=fcf25e759d959c261e269f32976319a4c456cdf11a98d44d81c5d18318186c44") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=4e11eb98608259804dc1267f1153e8ceba6cfcf146259fc0aa1333b71cc057e6") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=0f2e46ca98602ab3ef58755edde40c4aee93cb33684d09de75c4c09d2afc40ea") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=2601b82eb4ca835945095d1c3fc811ce103f5cc4c3c514191469c43a6096447c") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-signpost: type_signpost;
+  $type-signpost-family: Montserrat,sans-serif;
+  $type-signpost-styles: ((normal, italic), ());
+  $type-signpost-named-styles: ((initial, italic), ());
+  $type-signpost-weights: (400);
+  $type-signpost-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.e9c2ec7697570c33b13645dbd15f3f729c5e921b.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=1b5e5e5a09c73c5129828e74c23a92cbc808635b1504c027a46b233568cac4c4") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_n3.f481a31eaff8b48749cc413f5c6990b1db3c9103.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=d5d47c529df33fc711b7ac07ecf2997e6eb9635f916d34653ff6f7a4ce6f6264") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: italic;
+  font-display: auto;
+  src: url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.0851c828f2d9e24bc7e62370e5b23fbce45a9776.woff2?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=a7d2e8ebcfb38a8dfab934b963cc59820673aaf50c5283fd339e381b29a52cc1") format("woff2"),
+       url("https://fonts.shopifycdn.com/montserrat/montserrat_i3.2ea997ee0b5ec44aa35a893518aa91f824531238.woff?h1=bmF1ZGljLmNvbQ&h2=bmF1ZGljLmNvbS5hdQ&hmac=becdd91443ce244e86d76260c5d79590437d24ca41101d380c2c3dba49f32acd") format("woff");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  $type-body-bold: type_body_bold;
+  $type-body-bold-family: Montserrat,sans-serif;
+  $type-body-bold-styles: ((normal, italic), ());
+  $type-body-bold-named-styles: ((initial, italic), ());
+  $type-body-bold-weights: (300);
+  $type-body-bold-named-weights: (initial);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$font-variables: ($type-body $type-heading $type-button $type-menu $type-section $type-product-card-title $type-product-price $type-product-vendor $type-footer-heading $type-highlights-bar $type-signpost $type-body-bold);
+$font-variables-families: ($type-body-family $type-heading-family $type-button-family $type-menu-family $type-section-family $type-product-card-title-family $type-product-price-family $type-product-vendor-family $type-footer-heading-family $type-highlights-bar-family $type-signpost-family $type-body-bold-family);
+$font-variables-weights: ($type-body-weights $type-heading-weights $type-button-weights $type-menu-weights $type-section-weights $type-product-card-title-weights $type-product-price-weights $type-product-vendor-weights $type-footer-heading-weights $type-highlights-bar-weights $type-signpost-weights $type-body-bold-weights);
+$font-variables-named-weights: ($type-body-named-weights $type-heading-named-weights $type-button-named-weights $type-menu-named-weights $type-section-named-weights $type-product-card-title-named-weights $type-product-price-named-weights $type-product-vendor-named-weights $type-footer-heading-named-weights $type-highlights-bar-named-weights $type-signpost-named-weights $type-body-bold-named-weights);
+$font-variables-styles: ($type-body-styles $type-heading-styles $type-button-styles $type-menu-styles $type-section-styles $type-product-card-title-styles $type-product-price-styles $type-product-vendor-styles $type-footer-heading-styles $type-highlights-bar-styles $type-signpost-styles $type-body-bold-styles);
+$font-variables-named-styles: ($type-body-named-styles $type-heading-named-styles $type-button-named-styles $type-menu-named-styles $type-section-named-styles $type-product-card-title-named-styles $type-product-price-named-styles $type-product-vendor-named-styles $type-footer-heading-named-styles $type-highlights-bar-named-styles $type-signpost-named-styles $type-body-bold-named-styles);
+
+// Find the index of the font setting for cross referencing
+@function font-setting-index($font-type) {
+  @return index($font-variables, $font-type);
+}
+
+// Font
+// --------
+// Find the index of a font weight from its relative name
+// - [$font-type]: Variable of font to look up
+// - [$font-weight]: lighter/initial/bolder
+@function font-weight-index($font-type, $font-weight: initial) {
+  $font-setting-index: font-setting-index($font-type);
+
+  // Look up available weights based on index of font setting
+  $named-weights: nth($font-variables-named-weights, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-index: index($named-weights, $font-weight);
+
+  // Return index of named weight, or return initial weight
+  @return if($weight-index, $weight-index, 1);
+}
+
+// Font
+// --------
+// Find the font family for a font setting
+// - [$font-type]: Variable of font to look up
+@function font-family($font-type) {
+  
+    @return nth($font-variables-families, font-setting-index($font-type));
+  
+}
+
+// Font
+// --------
+// Find a font style relative to a font weight
+// - [$font-type]: Variable of font to look up
+// - [$font-style]: initial/italic
+// - [$font-weight]: lighter/initial/bolder
+@function font-style($font-type, $font-style: initial, $font-weight: initial) {
+  $style: null;
+  $styles: null;
+
+  // Find index of font setting
+  $font-setting-index: font-setting-index($font-type);
+
+  // Get styles based on index of font setting
+  $font-styles: nth($font-variables-styles, $font-setting-index);
+  $font-named-styles: nth($font-variables-named-styles, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-named-index: font-weight-index($font-type, $font-weight);
+
+  // Get styles available for $font-weight
+  $named-weight-style: nth($font-styles, $weight-named-index);
+  $named-weight-named-style: nth($font-named-styles, $weight-named-index);
+
+  // Find position of $font-style
+  $style-named-index: index($named-weight-named-style, $font-style);
+
+  @if $style-named-index {
+    @return nth($named-weight-style, $style-named-index);
+  } @else {
+    // Return initial font style
+    @return nth($named-weight-style, 1);
+  }
+}
+
+// Font weight
+// --------
+// Find a font sensitive relative weight
+// - [$font-type]: Variable of font to look up
+// - [$font-weight]: lighter/initial/bolder
+@function font-weight($font-type, $font-weight: initial) {
+  $weight: null;
+
+  // Find index of font setting
+  $font-setting-index: font-setting-index($font-type);
+
+  // Look up available weights based on index of font setting
+  $weights: nth($font-variables-weights, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-index: font-weight-index($font-type, $font-weight);
+
+  // Return numerical weight of font
+  @return nth($weights, $weight-index);
+}
+
+// Font
+// --------
+// Generate complete font styles for a font setting
+// - [$font-type]: Variable of font to look up
+// - [$font-family]: true/false
+// - [$font-size]: unit/false
+// - [$font-style]: initial/italic/false
+// - [$font-weight]: lighter/initial/bolder/false
+@mixin font(
+  $font-type,
+  $font-family: true,
+  $font-size: false,
+  $font-style: initial,
+  $font-weight: initial
+) {
+  @if $font-family { font-family: font-family($font-type); }
+  @if $font-size { font-size: $font-size; }
+  @if $font-style { font-style: font-style($font-type, $font-style: $font-style, $font-weight: $font-weight ); }
+  @if $font-weight { font-weight: font-weight($font-type, $font-weight: $font-weight); }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+/* Document
+   ========================================================================== */
+
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+
+// Setting abstracted libraries
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval, $rem-base: 16px) {
+  @return (strip-units($pxval) / strip-units($rem-base)) * 1rem;
+}
+
+@function rem2px($remval, $px-base: 16px) {
+  @return (strip-units($px-base) * strip-units($remval)) * 1px;
+}
+
+@function morph($color, $adjustment-value: 2) {
+  $lightness: lightness($color);
+  $light-color: false;
+
+  @if $lightness > 35% { $light-color: true; }
+
+  @if $light-color {
+    $lightness: ($lightness / 20) * $adjustment-value;
+    $color: darken($color, $lightness);
+  } @else {
+    @if $lightness < 2.5% {
+      $lightness: 30%;
+    } @else if $lightness < 7.5% {
+      $lightness: 15%;
+    }
+
+    $lightness: ($lightness / 10) * $adjustment-value;
+    $color: lighten($color, $lightness);
+  }
+
+  $saturation: saturation($color);
+  $saturated-color: false;
+
+  @if $saturation > 0% { $saturated-color: true; }
+
+  $saturation: ($saturation / 20);
+
+  @if $saturated-color {
+    @if $light-color {
+      $color: desaturate($color, $saturation);
+    } @else {
+      $color: saturate($color, $saturation);
+    }
+  }
+
+  @return $color;
+}
+
+// Check to see if a color is black and transparent
+@function color-transparent($color) {
+  @if (alpha($color) == 0 and red($color) == 0 and green($color) == 0 and blue($color) == 0) {
+    // Color is fully transparent, but black. Return opaque white for further adjustments
+    @return rgba(255, 255, 255, 1);
+  } @else {
+    @return $color;
+  }
+}
+
+// If background is dark return appropriate color for mixin
+@function border-mix($local-background, $local-dark, $local-light) {
+  @if(lightness($local-background) >= 50%) {
+    @return $local-dark;
+  } @else {
+    @return $local-light;
+  }
+}
+
+@function vw($pxval) {
+  $vw-context: $max-width / 100;
+  @return ($pxval/$vw-context) * 1vw;
+}
+
+
+// ! Colors
+
+
+// Header colors
+
+$color-header-text: #000000;
+$color-header-text-hover: rgba(0, 0, 0, 0.7);
+$color-header-text-light: transparentize($color-header-text, 0.8);
+$color-header-logo-text: #000000;
+$color-header-background: color-transparent(#ffffff);
+$color-header-cart-count-badge: #c7c7c7;
+$color-header-cart-count-text: #ffffff;
+$color-header-shadow: rgba(0,0,0,0);
+
+// Header search bar
+
+$color-header-search-bar-background: #ffffff;
+$color-header-search-bar-border: rgba(0,0,0,0);
+$color-header-search-bar-text: #000000;
+$color-header-search-bar-button-icon: #c7c7c7;
+$color-header-search-bar-button-background: #ffffff;
+
+// Header navigation
+
+$color-header-navigation-background: #ffffff;
+$color-header-navigation-main-menu-text: #212121;
+$color-header-navigation-main-menu-text-hover: #ffc1f9;
+$color-header-navigation-secondary-menu-text: #212121;
+$color-header-navigation-secondary-menu-text-hover: #212121;
+$color-header-navigation-dropdown-menu-background: #ffffff;
+$color-header-navigation-dropdown-menu-links: #212121;
+$color-header-navigation-dropdown-menu-links-hover: #ffc1f9;
+$color-header-navigation-meganavigation-promo-text: #313131;
+$color-header-navigation-meganavigation-menu-headings: #313131;
+$color-header-navigation-mobile-submenu-background: #ffffff;
+$color-header-navigation-sale-link: #35ac19;
+$color-header-navigation-sale-link-hover: rgba(53, 172, 25, 0.7);
+
+// Text
+
+$color-text-headings: #212121;
+$color-text-regular-text: #111111;
+$color-text-light-text: #7c7873;
+$color-text-links: #000000;
+$color-text-links-hover: #ffc1f9;
+$color-text-regular-text-encoded: "212121";
+
+// Buttons
+
+$color-buttons-primary-button-background: #555555;
+$color-buttons-primary-button-text: #ffffff;
+$color-buttons-primary-button-background-hover: #959292;
+$color-buttons-secondary-button-background: #555555;
+$color-buttons-secondary-button-border: rgba(0,0,0,0);
+$color-buttons-secondary-button-text: #ffffff;
+$color-buttons-secondary-button-text-hover: #ffffff;
+$color-buttons-secondary-button-border-hover: rgba(0,0,0,0);
+$color-buttons-secondary-button-background-hover: #959292;
+$color-buttons-sold-out-button-text: #ffffff;
+$color-buttons-sold-out-button-background: #b2653e;
+
+$color-buttons-disabled-text: #696969;
+$color-buttons-disabled-background: #ebebeb;
+
+// Forms
+
+$color-forms-input-placeholder-text: #333333;
+$color-forms-input-text: #212121;
+$color-forms-input-background: #ffffff;
+$color-forms-input-border: #212121;
+$color-forms-selected-input: #212121;
+
+$color-forms-input-border-hover: morph($color-forms-input-border, 2);
+
+// Products
+
+$color-products-vendor-name: #555555;
+$color-products-regular-price: #212121;
+$color-products-compare-at-price: #b4b4b4;
+$color-products-sale-price: #288613;
+$color-products-sale-badge-text: #ffffff;
+$color-products-sale-badge: #35ac19;
+$color-products-sold-out-badge-text: #ffffff;
+$color-products-sold-out-badge: #b2653e;
+$color-products-product-gallery-active-thumbnail: #d7d7d7;
+$color-products-product-image-backgrounds: rgba(0,0,0,0);
+$color-products-in-stock: #3c9342;
+$color-products-low-stock: #cb9c22;
+$color-products-no-stock: #bf262f;
+
+// Product cards
+
+$color-product-cards-background: #ffffff;
+
+// Product reviews
+
+$color-product-reviews-star-rating-border: #7c7873;
+$color-product-reviews-star-rating-active: #000000;
+
+// Layout
+
+$color-layout-site-background: #ffffff;
+$color-layout-secondary-backgrounds: #ffffff;
+$color-layout-dividers: #eaeaea;
+
+// Content containers
+
+$color-content-containers-background: #ffffff;
+
+// Popups
+
+$color-popups-background: #ffffff;
+
+// Site overlays
+
+$color-site-overlays-background: rgba(#212121, 0.5);
+
+// Footer
+
+$color-footer-background: #f0f0f0;
+$color-footer-headings: #111111;
+$color-footer-text: #111111;
+$color-footer-text-link: #111111;
+$color-footer-text-link-hover: #777777;
+$color-footer-menu-list-link: #111111;
+$color-footer-menu-list-link-hover: #777777;
+$color-footer-additional-menu-link: #ffffff;
+$color-footer-additional-menu-link-hover: #b2653e;
+$color-footer-copyright-text: #999999;
+
+$color-additional-accent: transparentize($color-footer-text, 0.5);
+
+// Social icons
+
+$color-facebook: #4267b1;
+$color-twitter: #1da1f2;
+$color-pinterest: #cc2129;
+$color-instagram: #000;
+$color-tumblr: #001935;
+$color-vimeo: #1eb8ea;
+$color-youtube: #ff0000;
+$color-linkedin: #0077b5;
+
+// Placeholders
+$color-placeholder-background: mix($color-text-regular-text, $color-layout-site-background, 8%);
+$color-placeholder-fill: mix($color-text-regular-text, $color-layout-site-background, 35%);
+
+// General
+$color-black: #000;
+$color-white: #fff;
+$color-border: mix($color-layout-site-background, border-mix($color-layout-site-background, $color-black, $color-white));
+$color-border-soft: transparentize(border-mix($color-layout-site-background, $color-black, $color-white), 0.85);
+
+$color-box-shadow-border: transparentize($color-border, 0.84);
+$color-box-shadow-shadow: transparentize($color-border, 0.89);
+$color-box-shadow-border-focused: transparentize($color-border, 0.5);
+$color-box-shadow-shadow-focused: transparentize($color-border, 0.5);
+
+$color-error: #f05d5d;
+$color-success: #51a551;
+$color-highlight: #fffbd9;
+
+
+// ! Typography
+
+// Fonts
+$font-heading: $type-heading;
+$font-body: $type-body;
+
+  $font-body-bold: $type-body-bold;
+  $use-alternate-font-body-bold: true;
+
+$font-button: $type-button;
+$font-menu: $type-menu;
+$type-menu-sizing: 0.88;
+$font-section: $type-section;
+$font-product-card-title: $type-product-card-title;
+$font-product-price: $type-product-price;
+$font-product-vendor: $type-product-vendor;
+$font-footer-heading: $type-footer-heading;
+$font-highlights-bar: $type-highlights-bar;
+$font-signpost: $type-signpost;
+
+// Base Size
+$font-size-base: 15;
+$font-size-base-mobile: 15px;
+$font-size-base-form: 16px;
+
+// Headings size adjustment
+$font-heading-sizing: 1.34;
+$section-heading-sizing: 0.8;
+$section-subheading-sizing: 1.1em;
+$font-footer-heading-sizing: 0.98em;
+
+// Letter spacing
+$font-heading-spacing: 0.09em;
+$font-body-spacing: 0.0em;
+$font-menu-spacing: 0.1em;
+$font-button-spacing: 0.1em;
+$font-button-sizing: 0.98;
+$font-section-spacing: 0.07em;
+$font-product-vendor-spacing: 0.1em;
+$font-footer-heading-spacing: 0.11em;
+$font-highlights-spacing: 0.1em;
+
+// Capitalization
+$font-heading-capitalize: true;
+$font-menu-capitalize: true;
+$font-button-capitalize: true;
+$font-section-capitalize: true;
+$font-product-capitalize: true;
+$font-footer-heading-capitalize: true;
+$font-highlights-capitalize: true;
+
+// Other
+$font-body-underline-links: false;
+
+// font sizes should be adjusted by this much if all caps.
+$capitalize_adjustment: -1;
+
+// Font sizes
+$font-body-size: $font-size-base;
+$font-body-size-small: rem($font-size-base - 1px); // 15px
+$font-body-size-smaller: rem($font-size-base - 2px); // 14px
+$font-body-size-smallest: rem($font-size-base - 3px); // 13px
+$font-heading-large: rem($font-size-base * 2.125); // 34px
+$font-heading-medium: rem($font-size-base * 1.875); // 32px
+$font-h1-size: rem($font-size-base * 1.75); // 28px
+$font-h2-size: rem($font-size-base * 1.625); // 26px
+$font-h3-size: rem($font-size-base * 1.5); // 24px
+$font-h4-size: rem($font-size-base * 1.25); // 20px
+$font-h5-size: rem($font-size-base * 1.125); // 18px
+$font-h6-size: rem($font-size-base); // 16px
+$font-product-card-sizing: 0.8;
+$font-highlights-sizing: 0.86;
+$font-signpost-sizing: 2.38;
+// ! Spacing
+
+// Vertical spaces
+$space-xxx-small: rem($font-body-size * 0.25); // 4px
+$space-xx-small: rem($font-body-size * 0.5); // 8px
+$space-x-small: rem($font-body-size * 0.75); // 12px
+$space-small: rem($font-body-size); // 16px
+$space-medium: rem($font-body-size * 1.25); // 20px
+$space-large: rem($font-body-size * 1.75); // 28px
+$space-x-large: rem($font-body-size * 2); // 36px
+$space-xx-large: rem($font-body-size * 3.125); // 50px
+$space-xxx-large: rem($font-body-size * 4.25); // 68px
+$space-section-heading: rem(42px);
+
+$space-input-padding-horizontal: rem(14px);
+$space-input-padding-vertical-base: rem(15px);
+$space-input-padding-vertical-bottom: rem(15px);
+$space-input-padding-vertical-top: rem(15px);
+
+// Layout
+$max-width: 1400px;
+$page-max-width: 1000px;
+$gutter-outer-small: 10px;
+$gutter-outer-medium: 15px;
+$gutter-outer: 25px;
+$gutter-content: 20px;
+
+// ! Z-Indices
+
+$index-header: 700;
+$index-header-navmenu: $index-header + 2;
+$index-banner: 800;
+$index-main: 500;
+$index-footer: 500;
+$index-mobile-nav: $index-header + 100;
+$index-modal: $index-mobile-nav + 100;
+
+$index-header-search: 150;
+$index-header-internal-icons: 125;
+
+// ! Breakpoints
+
+$bp-xxs: 375px;
+$bp-xs: 525px;
+$bp-smaller: 680px;
+$bp-small: 720px;
+$bp-medium: 860px;
+$bp-large: 1024px;
+$bp-larger: 1080px;
+$bp-xl: 1280px;
+
+
+  $bp-xxl: 1450px;
+
+
+// ! Components
+
+// Container
+
+$container-border-radius: 0px;
+$container-border-radius-sm: 0.0px;
+
+// Button font sizes
+$button-x-large-size: rem($font-size-base * 1.3125); // 21px
+$button-large-size: rem($font-size-base * 1.125); // 18px
+$button-medium-size: rem($font-size-base); // 16px
+$button-small-size: rem($font-size-base * 0.875); // 14px
+$button-border-radius: 0px;
+
+// Checkbox settings
+$checkbox-size: (13px, 13px);
+$checkbox-border: $color-forms-input-border;
+$checkbox-inactive: $color-forms-input-background;
+$checkbox-active: $color-text-links;
+
+// Form input settings
+$form-border-radius: 0px;
+$form-border-radius-sm: 0.0px;
+
+// Transitions
+$ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$ease-out-ripple: cubic-bezier(0.330, 0.810, 0.585, 0.990);
+$ease-bubble: cubic-bezier(0.3, 0, 0, 1);
+
+// Logo widths
+$header-logo-image-max-width: 100px;
+$header-content-offset-right: 305px; // My account + Logout + Currency switcher
+
+$site-nav-item-space: 8px;
+$site-nav-link-space: 7px;
+$site-nav-link-space-vertical: 12px;
+$site-nav-link-space-horizontal: 15px;
+$site-subnav-space: 15px;
+
+ // Header Settings
+$header-content-height: 46px;
+$header-padding-vertical-mobile: 10px;
+$header-padding-vertical: 20px;
+$header-padding-vertical-sticky: 10px;
+$header-line-height: $font-body-size + 2px;
+
+// Product grid settings
+$grid-column-space-desktop: 20px;
+$grid-row-space-desktop: 20px;
+$grid-column-space-mobile: 5px;
+$grid-row-space-mobile: 5px;
+$sidebar-width: 185px;
+$product-card-border-radius: 0px;
+
+// Product page settings
+$color-slider-accent: $color-text-links;
+$color-slider-dot: mix($color-text-regular-text, $color-layout-site-background, 23%);
+$quantity-width: rem(115px);
+
+// Featured blog post
+$color-featured-post-background: $color-text-links;
+$color-featured-post-foreground: $color-layout-site-background;
+
+// Swatch settings
+$swatches-size-product-page: 16px;
+$swatches-size-product-card: 16px;
+$swatches-size-sidebar-filter: 24px;
+$swatches-shape: square;
+
+@mixin media($max: false, $min: false) {
+  @if $max {
+    @if $min {
+      @media screen and (max-width: $max - 1) and (min-width: $min) { @content; }
+    } @else {
+      @media screen and (max-width: $max - 1) { @content; }
+    }
+  } @else {
+    @media screen and (min-width: $min) { @content; }
+  }
+}
+
+// Reusable button style for changing button sizes at different break points
+@mixin button-size($button-size) {
+  $padding: false;
+
+  @if $button-size == small {
+    @include font-size-button-small($font-button-capitalize, -2);
+    $padding: (11px, 22px);
+  } @else if $button-size == medium {
+    @include font-size-button-medium($font-button-capitalize, -2);
+    $padding: (14px, 22px);
+  } @else if $button-size == large {
+    @include font-size-button-large($font-button-capitalize, -2);
+    $padding: (14px, 34px);
+  } @else if $button-size == x-large {
+    @include font-size-button-x-large($font-button-capitalize, -2);
+    $padding: (14px, 42px);
+  }
+
+  @include capitalize($font-button-capitalize);
+  padding: rem(nth($padding, 1)) rem(nth($padding, 2));
+  letter-spacing: $font-button-spacing;
+}
+
+@mixin header-shadow {
+  $color-header-shadow-alpha: 0.0;
+
+  @if ($color-header-shadow-alpha != 0) {
+    box-shadow: 0 1px 4px transparentize($color-header-shadow, 0.75);
+  }
+}
+
+@mixin grid-gutter($size) {
+  margin-right: -$size;
+  margin-left: -$size;
+
+  > * {
+    margin-right: $size;
+    margin-left: $size;
+  }
+}
+
+@mixin mobile-scrolling() {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ! Font mixins
+
+@mixin capitalize($capitalize) {
+  @if $capitalize == true {
+    text-transform: uppercase;
+  } @else {
+    text-transform: none;
+  }
+}
+
+
+@function capitalize_adjustment($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  @if $use_capitalize_adjustment {
+    @return $adjustment_amount;
+  } @else {
+    @return 0;
+  }
+}
+
+@mixin font-body-bold($font-style: initial) {
+  @if $use-alternate-font-body-bold {
+    @include font($font-body-bold, $font-weight: initial, $font-style: $font-style);
+  } @else {
+    @include font($font-body-bold, $font-weight: bolder, $font-style: $font-style);
+  }
+}
+
+@mixin font-body-underline-links {
+  @if $font-body-underline-links {
+    text-decoration: underline;
+  }
+}
+
+@mixin font-size-heading-large($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -3, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 2.125 * $heading-size-setting + $adjustment); // 34px
+
+  @include media($bp-small) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 2.125 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-medium($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -3, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.875 * $heading-size-setting + $adjustment); // 32px
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.875 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-1($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -3, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.75 * $heading-size-setting + $adjustment); // 28px
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.75 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-2($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -2, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.625 * $heading-size-setting + $adjustment); // 26px
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.625 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-3($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: $capitalize_adjustment, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount: -2);
+
+  font-size: rem($font-size-base * 1.5 * $heading-size-setting + $adjustment); // 24px
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.5 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-4($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -2, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.25 * $heading-size-setting + $adjustment); // 20px
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.25 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-heading-5($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.125 + $adjustment); // 18px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.125 + $adjustment);
+  }
+}
+
+@mixin font-size-heading-6($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.125 + $adjustment); // 16px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.125 + $adjustment);
+  }
+}
+
+@mixin font-size-section-heading($use_capitalize_adjustment: $font-heading-capitalize, $adjustment_amount: -2, $heading-size-setting: $font-heading-sizing) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.5 * $heading-size-setting + $adjustment);
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($heading-size-setting, 0.4);
+    font-size: rem($font-size-base-mobile * 1.5 * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-highlight-banner-heading($use_capitalize_adjustment: $font-highlights-capitalize, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.125 * $font-highlights-sizing + $adjustment); // 18px
+
+  @include media($bp-large) {
+    $mobile-scale: mobile-font-scaling($font-highlights-sizing, 0.6);
+    font-size: rem($font-size-base-mobile * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-body-larger($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.375 + $adjustment); // 22px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.375 + $adjustment);
+  }
+}
+
+@mixin font-size-body-large($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.25 + $adjustment); // 20px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.25 + $adjustment);
+  }
+}
+
+@mixin font-size-body-medium($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.125 + $adjustment); // 18px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.125 + $adjustment);
+  }
+}
+
+@mixin font-size-body($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base + $adjustment); // 16px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile + $adjustment);
+  }
+}
+
+@mixin font-size-form($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base + $adjustment); // 16px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-form + $adjustment);
+  }
+}
+
+@mixin font-size-body-small($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 0.9375 + $adjustment); // 15px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 0.9375 + $adjustment);
+  }
+}
+
+@mixin font-size-body-smaller($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 0.875 + $adjustment); // 14px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 0.875 + $adjustment);
+  }
+}
+
+@mixin font-size-body-smallest($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 0.8125 + $adjustment); // 13px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 0.8125 + $adjustment);
+  }
+}
+
+@mixin font-size-body-tiny($use_capitalize_adjustment: false, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 0.75 + $adjustment); // 12px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 0.75 + $adjustment);
+  }
+}
+@mixin font-size-product-card($base-size: $font-size-base) {
+
+  font-size: rem($base-size * $font-product-card-sizing);
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($font-product-card-sizing);
+    font-size: rem($font-size-base-mobile * $mobile-scale);
+  }
+}
+
+@mixin font-size-button-small($use_capitalize_adjustment: $font-button-capitalize, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 0.875 * $font-button-sizing + $adjustment); // 14px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 0.875 * $font-button-sizing);
+  }
+}
+
+@mixin font-size-button-medium($use_capitalize_adjustment: $font-button-capitalize, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * $font-button-sizing + $adjustment); // 16px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * $font-button-sizing  + -1);
+  }
+}
+
+@mixin font-size-button-large($use_capitalize_adjustment: $font-button-capitalize, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.125 * $font-button-sizing + $adjustment); // 18px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.125 * $font-button-sizing + -1);
+  }
+}
+
+@mixin font-size-button-x-large($use_capitalize_adjustment: $font-button-capitalize, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * 1.3125 * $font-button-sizing + $adjustment); // 21px
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * 1.3125 * $font-button-sizing + -1);
+  }
+}
+
+@mixin font-size-button-signpost() {
+  font-size: rem($font-size-base * $font-signpost-sizing);
+
+  @include media($bp-medium) {
+    font-size: rem($font-size-base-mobile * $font-signpost-sizing);
+  }
+}
+
+@mixin font-size-menu-large($use_capitalize_adjustment: false, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * $type-menu-sizing * 1.0625 + $adjustment);
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($type-menu-sizing, 0.5);
+    font-size: rem($font-size-base-mobile * 1.0625 * $mobile-scale + -1);
+  }
+}
+
+@mixin font-size-menu($use_capitalize_adjustment: $font-menu-capitalize, $adjustment_amount: $capitalize_adjustment) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * $type-menu-sizing + $adjustment);
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($type-menu-sizing, 0.5);
+    font-size: rem($font-size-base-mobile * $mobile-scale + $adjustment);
+  }
+}
+
+@mixin font-size-footer-heading($use_capitalize_adjustment: false, $adjustment_amount: -2) {
+  $adjustment: capitalize_adjustment($use_capitalize_adjustment, $adjustment_amount);
+
+  font-size: rem($font-size-base * $font-footer-heading-sizing * 1.125 + $adjustment);
+
+  @include media($bp-medium) {
+    $mobile-scale: mobile-font-scaling($font-footer-heading-sizing, 0.4);
+    font-size: rem($font-size-base-mobile * $mobile-scale * 1.125 + $adjustment);
+  }
+}
+
+@mixin font-size-input {
+  font-size: rem($font-size-base); // 16px
+
+  @include media($bp-medium) {
+    font-size: rem(16px); // Force 16px regardless of base size
+  }
+}
+
+@function mobile-font-scaling($selected_scale: 1, $font_adjustment: 0.6) {
+  @return ($selected_scale - 1) * $font_adjustment + 1;
+}
+
+// Typography
+
+%heading {
+  @include font($font-heading);
+  @include capitalize($font-heading-capitalize);
+  letter-spacing: $font-heading-spacing;
+
+  b,
+  strong {
+    font-weight: font-weight($font-heading, $font-weight: bolder);
+  }
+
+  em {
+    font-style: font-style($font-heading, $font-style: italic);
+  }
+
+  b em,
+  strong em,
+  em b,
+  em strong {
+    font-style: font-style($font-heading, $font-weight: bolder, $font-style: italic);
+  }
+}
+
+%h1 {
+  @extend %heading;
+  @include font-size-heading-1($font-heading-capitalize, -3);
+}
+
+%h2 {
+  @extend %heading;
+  @include font-size-heading-2($font-heading-capitalize, -2);
+}
+
+%h3 {
+  @extend %heading;
+  @include font-size-heading-3($font-heading-capitalize, -2);
+}
+
+%h4 {
+  @extend %heading;
+  @include font-size-heading-4($font-heading-capitalize, -2);
+}
+
+%h5 {
+  @extend %heading;
+  @include font-size-heading-5($font-heading-capitalize, -2);
+}
+
+%h6 {
+  @extend %heading;
+  @include font-size-heading-6($font-heading-capitalize, -2);
+}
+
+%menu {
+  @include font($font-menu);
+  @include font-size-menu($font-menu-capitalize);
+  @include capitalize($font-menu-capitalize);
+  letter-spacing: $font-menu-spacing;
+}
+
+%button-base {
+  @include button-size(small);
+  @include font($font-button);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  transition: (
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    width 0.2s ease,
+    height 0.2s ease
+  );
+}
+
+%button-disable {
+  &,
+  &:active,
+  &:focus {
+    color: $color-buttons-disabled-text;
+    cursor: default;
+    background-color: $color-buttons-disabled-background;
+    border: 1px solid $color-buttons-disabled-background;
+  }
+}
+
+%button-primary {
+  @extend %button-base;
+  color: $color-buttons-primary-button-text;
+  background-color: $color-buttons-primary-button-background;
+  border: 1px solid $color-buttons-primary-button-background;
+
+  &:not(.disabled):hover {
+    background: $color-buttons-primary-button-background-hover;
+    border: 1px solid $color-buttons-primary-button-background-hover;
+  }
+
+  &:active,
+  &:focus {
+    background: $color-buttons-primary-button-background-hover;
+    border: 1px solid $color-buttons-primary-button-background-hover;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
+%button-secondary {
+  @extend %button-base;
+  color: $color-buttons-secondary-button-text;
+  background-color: $color-buttons-secondary-button-background;
+  border: 1px solid $color-buttons-secondary-button-border;
+
+  &:not(.disabled):hover {
+    color: $color-buttons-secondary-button-text-hover;
+    background: $color-buttons-secondary-button-background-hover;
+    border: 1px solid $color-buttons-secondary-button-border-hover;
+  }
+
+  &:active,
+  &:focus {
+    background: $color-buttons-secondary-button-background-hover;
+    border: 1px solid $color-buttons-secondary-button-border-hover;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
+// Layout
+%layout-container {
+  max-width: $max-width;
+  padding-right: $gutter-outer-small;
+  padding-left: $gutter-outer-small;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media($min: $bp-small, $max: $bp-larger) {
+    padding-right: $space-large;
+    padding-left: $space-large;
+  }
+
+  @include media($min: $bp-larger) {
+    padding-right: $gutter-content * 2;
+    padding-left: $gutter-content * 2;
+  }
+}
+
+
+%section-container {
+  max-width: $max-width;
+  padding-right: $gutter-outer-small;
+  padding-left: $gutter-outer-small;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media($min: $bp-small) {
+    padding-right: $space-large;
+    padding-left: $space-large;
+  }
+
+  @include media($min: $bp-larger) {
+    padding-right: calc(#{$gutter-content * 2});
+    padding-left: calc(#{$gutter-content * 2});
+  }
+}
+
+%layout-container--reset {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+
+  @include media($min: $bp-large) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+%page-content {
+  margin-top: $gutter-content * 1.5;
+  margin-bottom: $gutter-content * 1.5;
+
+  @include media($min: $bp-large) {
+    margin-top: $gutter-content * 2.5;
+    margin-bottom: $gutter-content * 2.5;
+  }
+}
+
+%clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+%link--text {
+  color: $color-text-regular-text;
+  text-decoration: none;
+  transition: color 0.1s ease;
+
+  &:hover {
+    color: $color-text-links;
+  }
+}
+
+%link--default {
+  color: $color-text-links;
+  text-decoration: none;
+  transition: color 0.1s ease;
+
+  &:hover {
+    color: $color-text-links-hover;
+  }
+}
+
+%box-shadow {
+  border: 1px solid $color-box-shadow-border;
+  box-shadow: 0 1px 4px $color-box-shadow-shadow;
+}
+
+%inline-chevron {
+  display: inline-block;
+  margin-left: rem(5px);
+  vertical-align: middle;
+
+  svg {
+    display: block;
+    margin-top: rem(-2px);
+    transform: rotate(-90deg);
+  }
+}
+
+%icon-checkbox {
+  display: inline-block;
+  width: nth($checkbox-size, 1);
+  height: nth($checkbox-size, 2);
+  color: $checkbox-inactive;
+  vertical-align: middle;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $checkbox-inactive;
+    border: 1px solid $checkbox-border;
+    border-radius: $form-border-radius-sm;
+    fill: currentColor;
+  }
+}
+
+%icon-checkbox--active {
+  color: $checkbox-active;
+
+  svg {
+    background-color: transparent;
+    border: 0;
+    border-radius: $form-border-radius-sm;
+    fill: currentColor;
+  }
+}
+
+%button-reset {
+  @include font($font-body, $font-weight: bolder);
+  padding: 0;
+  letter-spacing: $font-body-spacing;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: normal;
+     -moz-appearance: normal;
+          appearance: normal;
+}
+
+%atc-button {
+  position: relative;
+
+  .atc-button--text {
+    opacity: 1;
+  }
+
+  .atc-button--icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    visibility: hidden;
+    animation: rotate 0.6s linear infinite;
+    transition: opacity 0.1s ease 0.1s;
+
+    svg {
+      display: block;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &.processing {
+    .atc-button--text {
+      opacity: 0;
+    }
+
+    .atc-button--icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+%search-button {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .search-icon--inactive,
+  .search-icon--active {
+    display: inline-block;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .search-icon--inactive {
+    height: 23px;
+    opacity: 1;
+    transition: opacity 0.1s ease;
+  }
+
+  .search-icon--active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    visibility: hidden;
+    animation: rotate 0.7s cubic-bezier(0.69, 0.31, 0.56, 0.83) infinite;
+  }
+
+  &.search-icon--processing {
+    .search-icon--inactive {
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    .search-icon--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+%message--base {
+  @include font($font-body, $font-weight: bolder, $font-family: false);
+  @include font-size-body;
+  letter-spacing: $font-body-spacing;
+
+  a {
+    color: currentColor;
+  }
+}
+
+%message--error {
+  @extend %message--base;
+  color: $color-error;
+  background-color: mix($color-error, $color-layout-site-background, 18%);
+}
+
+%message--success {
+  @extend %message--base;
+  color: $color-success;
+  background-color: mix($color-success, $color-layout-site-background, 18%);
+}
+
+%sneak-in {
+
+  &.animating,
+  &.visible:not(.animating) {
+    display: block;
+  }
+
+  &.visible:not(.animating) {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  &.animating-in {
+    animation-delay: 0s;
+    animation-duration: 0.27s;
+    animation-name: sneak-in;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-direction: normal;
+  }
+
+  &.animating-out {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.12s cubic-bezier(1, 0, 0.7, 1);
+  }
+}
+
+%fade-in {
+  animation-delay: 0s;
+  animation-duration: 0.27s;
+  animation-name: fade-in;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-direction: normal;
+}
+
+%no-results--wrapper {
+  width: 100%;
+  margin-top: $space-xx-large;
+  text-align: center;
+
+  @include media($min: $bp-small) {
+    margin-top: $space-xx-large - $space-large;
+  }
+}
+
+%no-results--title {
+  @include font($font-body);
+  @include font-size-heading-4;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: $font-body-spacing;
+  color: $color-text-headings;
+}
+
+%no-results--button {
+  @extend %button-primary;
+  @include button-size(medium);
+  margin-top: $space-medium;
+}
+
+// Buttons
+
+.button-primary {
+  @extend %button-primary;
+}
+
+.button-secondary {
+  @extend %button-secondary;
+}
+
+.button-icon {
+  @extend %inline-chevron;
+  margin-left: 3px;
+
+  svg {
+    width: rem(14px * $font-button-sizing);
+    height: rem(14px * $font-button-sizing);
+    margin-top: rem(-3px);
+  }
+}
+
+.button-signpost {
+  @include font($font-signpost);
+  @include font-size-button-signpost;
+  display: block;
+  padding: 0;
+  margin-top: $space-medium;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+
+  @include media($min: $bp-medium) {
+    margin-top: $space-large;
+  }
+
+  .signpost-icon {
+    @extend %inline-chevron;
+    margin-left: 2px;
+
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-top: 0;
+    }
+  }
+}
+
+#messageus_button {
+  z-index:9999;
+}
+
+
+// Global styles
+html,
+body {
+  background-color: $color-layout-site-background;
+}
+
+html {
+  height: 100%;
+  &::before {
+    display: none;
+    content: "XS,S,M,L,L+,XL,XXL";
+  }
+
+  &::after {
+    display: none;
+    content: "XS";
+
+    @include media($min: $bp-small) {
+      content: "S";
+    }
+
+    @include media($min: $bp-medium) {
+      content: "M";
+    }
+
+    @include media($min: $bp-large) {
+      content: "L";
+    }
+
+    @include media($min: $bp-larger) {
+      content: "L+";
+    }
+
+    @include media($min: $bp-xl) {
+      content: "XL";
+    }
+
+    @include media($min: $bp-xxl) {
+      content: "XXL";
+    }
+  }
+}
+
+body {
+  @include font($font-body);
+  @include font-size-body;
+  width: 100%;
+  // 
+  letter-spacing: $font-body-spacing;
+  color: $color-text-regular-text;
+
+  @include media($bp-small) {
+    @include font-size-body-small;
+  }
+
+  &.scroll-lock {
+    height: 100vh;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
+}
+
+th,
+b,
+strong {
+  @include font-body-bold;
+  letter-spacing: $font-body-spacing;
+}
+
+em {
+  font-style: font-style($font-body, $font-style: italic);
+}
+
+th em,
+b em,
+strong em,
+em b,
+em strong {
+  @include font-body-bold($font-style: italic);
+  letter-spacing: $font-body-spacing;
+}
+
+// Headings
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+h5 {
+  @extend %h5;
+}
+
+h6 {
+  @extend %h6;
+}
+
+%show-for-sr,
+.visually-hidden {
+  //scss-lint:disable ImportantRule
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+}
+
+.skip-to-main {
+  @include font-size-body;
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  color: $color-text-links;
+  background: $color-layout-site-background;
+  text-decoration: none;
+  padding: 1em;
+
+  &:focus,
+  &:active {
+    left: 0;
+    z-index: $index-header + 2;
+  }
+}
+
+
+/*================ #Giftcard Template ================*/
+
+.giftcard__apple-wallet-image {
+  display: block;
+  margin: 0 auto;
+}
+
+/*================ Print Giftcard Styles ================*/
+@media print {
+  @page {
+    margin: 0.5cm;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .giftcard__print-link,
+  .giftcard__apple-wallet {
+    display: none;
+  }
+}
+
+/*================ Custom Giftcard Styles ================*/
+
+.giftcard-header {
+  padding: $space-small $space-large;
+  background-color: $color-header-background;
+  text-align: center;
+}
+
+.giftcard-header-logo {
+  display: inline-block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.giftcard-header-logo-text {
+  @include font-size-body;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.giftcard--container {
+  @extend %layout-container;
+  max-width: 488px;
+  margin-bottom: $space-xxx-large;
+  text-align: center;
+}
+
+.giftcard-title {
+  margin-top: $space-x-large;
+  margin-bottom: $space-x-large;
+}
+
+.giftcard-message {
+  @extend %message--base;
+
+  &.message--error {
+    @extend %message--error;
+  }
+}
+
+.giftcard-qr {
+  width: 120px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.giftcard-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: $space-medium;
+
+  .button-secondary {
+    margin-left: $gutter-content;
+  }
+}
+
+/*================ Gift Card image ================*/
+.giftcard-image {
+  position: relative;
+  text-align: center;
+
+  img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+  // White corner caps that overlap gift card image
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 47px; // asset width
+    height: 47px; // asset width
+    z-index: 3;
+  }
+
+  &::before {
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDdweCIgaGVpZ2h0PSI0N3B4IiB2aWV3Qm94PSIwIDAgNDcgNDciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ3IDQ3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBvcGFjaXR5PSIwLjEiPgoJCTxwYXRoIGQ9Ik00NC41ODYsMUwxLDQ0LjU4NlYxMGMwLTQuOTYzLDQuMDM3LTksOS05SDQ0LjU4NiBNNDcsMEgxMEM0LjQ3NywwLDAsNC40NzcsMCwxMHYzN0w0NywwTDQ3LDB6Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDQuNTg2LDFMMSw0NC41ODZWMTBjMC00Ljk2Myw0LjAzNy05LDktOUg0NC41ODYiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K') 0 0 no-repeat;
+    top: -1px;
+    left: -1px;
+  }
+
+  &::after {
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDdweCIgaGVpZ2h0PSI0N3B4IiB2aWV3Qm94PSIwIDAgNDcgNDciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ3IDQ3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBvcGFjaXR5PSIwLjEiPgoJCTxwYXRoIGQ9Ik0yLjQxNCw0Nkw0NiwyLjQxNFYzN2MwLDQuOTYzLTQuMDM3LDktOSw5SDIuNDE0IE0wLDQ3aDM3YzUuNTIzLDAsMTAtNC40NzcsMTAtMTBWMEwwLDQ3TDAsNDd6Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMi40MTQsNDZMNDYsMi40MTRWMzdjMCw0Ljk2My00LjAzNyw5LTksOUgyLjQxNCIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo=') 0 0 no-repeat;
+    bottom: -1px;
+    right: -1px;
+  }
+}
+
+/*================ Gift card code ================*/
+.giftcard-code {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.giftcard-code--medium {
+  font-size: 0.875em;
+}
+
+.giftcard-code--small {
+  font-size: 0.75em;
+}
+
+.giftcard-code--inner {
+  display: inline-block;
+  max-width: 450px;
+  padding: 0.5em;
+  vertical-align: baseline;
+  border-radius: 4px;
+}
+
+.giftcard-code-text {
+  @include font($font-body, $font-family: false);
+  display: inline-block;
+  padding: 0.4em 0.5em;
+  font-size: 1.875em;
+  line-height: 1;
+  letter-spacing: $font-body-spacing;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  background-color: $color-white;
+  border: 1px dashed $color-border;
+
+  &.disabled {
+    text-decoration: line-through;
+  }
+}
+
+/*================ Gift card amount ================*/
+.giftcard-amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.75em;
+  line-height: 1.2;
+  padding: 10px;
+  z-index: 5;
+  color: $color-white;
+
+  strong {
+    display: block;
+  }
+}
+
+/*================ Tooltip ================*/
+.giftcard-tooltip {
+  display: block;
+  position: absolute;
+  top: -50%;
+  right: 50%;
+  margin-top: 16px;
+  z-index: 4;
+  text-align: center;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    margin-bottom: -5px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 5px solid $color-white;
+  }
+}
+
+.giftcard-tooltip-label {
+  @include font($font-body, $font-family: false);
+  position: relative;
+  right: -50%;
+  display: block;
+  min-height: 14px;
+  padding: 0.5em 0.75em;
+  margin-left: 0.25em;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: $font-body-spacing;
+  text-decoration: none;
+  text-shadow: none;
+  background-color: $color-white;
+  border: 0;
+  border-radius: 4px;
+
+  small {
+    font-size: 0.875em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+/*================ Medium-down width ================*/
+@media screen and (max-width: 580px) {
+  .print-link {
+    display: none;
+  }
+}
+
+/*================ Small width ================*/
+@media screen and (max-width: 400px) {
+  .giftcard-image::before,
+  .giftcard-image::after {
+    display: none;
+  }
+
+  .giftcard-code {
+    font-size: 0.75em;
+  }
+
+  .giftcard-code--medium {
+    font-size: 0.65em;
+  }
+
+  .giftcard-code--small {
+    font-size: 0.55em;
+  }
+}
+
+
+/*============================================================================
+  #Print Styles
+==============================================================================*/
+
+@media print {
+  .giftcard-image::before,
+  .giftcard-image::after,
+  .giftcard-tooltip {
+    display: none;
+  }
+
+  .giftcard-actions {
+    display: none;
+  }
+}
+

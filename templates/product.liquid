@@ -1,0 +1,25 @@
+{% section 'static-product' %}
+
+<div id="ShopTheLook-section"></div>
+
+{% section 'static-product-reviews' %}
+{% section 'static-product-recommendations' %}
+{% section 'static-recently-viewed' %}
+{% section 'static-product-promo-grid' %}
+<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+
+{% section 'yesplz-yml' %}
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.shopify-tabs > li').click(function(){
+      var tab_id = $(this).attr('data-tab');
+
+      $(this).parent().find('li').removeClass('current');
+      $('.shopify-tab-content').removeClass('current');
+
+      $(this).addClass('current');
+      $("#"+tab_id).addClass('current');
+    })
+  })
+</script>

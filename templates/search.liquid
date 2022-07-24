@@ -1,0 +1,11 @@
+<div data-options class="visually-hidden">
+  {}
+</div>
+
+{% section 'static-search' %}
+
+{% for item in search.results %}
+{% if item.object_type == 'product' and item.available == true %}
+...
+{% endif %}
+{% endfor %}

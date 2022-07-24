@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <title>
+      {{- shop.name -}}
+    </title>
+
+    {% if page_description != blank %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% include 'favicon' %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="viewport" content="width=device-width">
+
+    {% assign twitter_handle = settings.social_twitter | split: 'twitter.com/' | last %}
+    {%
+      include 'social-meta-tags',
+      twitter_handle: settings.twitter_handle
+    %}
+
+    {{ content_for_header }}
+
+    <script>
+      document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
+      if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
+      if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
+    </script>
+
+    {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  
+  {% include 'shogun-head' %}
+<!-- GSSTART Coming Soon code start. Do not change -->
+<script type="text/javascript"> gsProductByVariant = {}; {% if product.id > 1 %}{% for variant in product.variants %} gsProductByVariant[{{variant.id}}] = {% if variant.available %} 1 {% else %} 0 {% endif %}; {% endfor %}{% endif %}  gsProductCSID = "{{ product.id }}"; gsDefaultV = "{{ product.selected_or_first_available_variant.id }}"; </script><script  type="text/javascript" src="https://gravity-software.com/js/shopify/pac_shop30732.js?v=9c0749c28d89874b2c1e3cc7868d15e2"></script>
+<!-- Coming Soon code end. Do not change GSEND --></head>
+
+  <body class="template-{{ template | split: '.' | first }}">
+    <main class="site-main" aria-label="main content" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% comment %}
+      Modal container, used on Collections, Password, and QuickShop
+    {% endcomment %}
+    {% include 'modal' %}
+
+    {% assign theme_script = 'superstore.js' %}
+    {% if settings.use_minified_js %}
+      {% assign theme_script = 'superstore.min.js' %}
+    {% endif %}
+    <script
+      data-scripts
+      src="{{ theme_script | asset_url }}"
+      data-pxu-polyfills="{{ 'polyfills.js' | asset_url }}"
+    >
+    </script>
+  </body>
+</html>
