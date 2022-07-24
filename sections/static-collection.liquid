@@ -89,13 +89,16 @@
       <div class="collection--information">
     {% endif %}
 
-    {% comment %} collection description text removed from here - am {% endcomment %} {% comment %} 
-      {% if collection.description != blank %}
-        <div class="collection--description rte">
-          {{ collection.description }}
-        </div>
-      {% endif %}
-    {% endcomment %} 
+      {% comment %} collection description text removed from here. Add title - am {% endcomment %}  
+      <h1 style="color: #656565; font-size: 27px;">{{ collection.title }}</h1>
+      {% comment %}
+        {% if collection.description != blank %}
+          <div class="collection--description rte">
+            {{ collection.description }}
+          </div>
+        {% endif %}
+      {% endcomment %} 
+
     </div>
 
     {% if show_sidebar %}
