@@ -89,11 +89,13 @@
       <div class="collection--information">
     {% endif %}
 
+    {% comment %} collection description text removed from here - am {% endcomment %} {% comment %} 
       {% if collection.description != blank %}
         <div class="collection--description rte">
           {{ collection.description }}
         </div>
       {% endif %}
+    {% endcomment %} 
     </div>
 
     {% if show_sidebar %}
@@ -250,7 +252,21 @@
     </div>
   </div>
   {% endpaginate %}
+
+  {% comment %} Collection description text moved - am {% endcomment %}
+  <div class="collection--information">
+    {% if collection.description != blank %}
+      <div class="collection--description rte">
+        {{ collection.description }}
+      </div>
+    {% endif %}
   </div>
+
+  </div>
+
+
+
+
 
 {%- if section.settings.sort_by -%}
   {%-

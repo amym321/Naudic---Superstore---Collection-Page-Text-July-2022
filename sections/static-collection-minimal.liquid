@@ -29,11 +29,13 @@
             {{ collection.title }}
           </h1>
 
+          {% comment %} collection description text removed from here - am {% endcomment %} {% comment %} 
           {% if collection.description != blank %}
             <div class="collection--description rte">
               {{ collection.description }}
             </div>
           {% endif %}
+          {% endcomment %} 
         </div>
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
@@ -85,6 +87,16 @@
     </div>
   </div>
   {% endpaginate %}
+
+    {% comment %} Collection description text moved - am {% endcomment %}
+    <div class="collection--information">
+      {% if collection.description != blank %}
+        <div class="collection--description rte">
+          {{ collection.description }}
+        </div>
+      {% endif %}
+    </div>
+    
   </div>
 
 
