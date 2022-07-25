@@ -136,7 +136,8 @@
  {% include 'swift_core' %} 
  {% include 'hulk_po_vd.liquid' %}<!-- GSSTART Coming Soon code start. Do not change -->
 <script type="text/javascript"> gsProductByVariant = {}; {% if product.id > 1 %}{% for variant in product.variants %} gsProductByVariant[{{variant.id}}] = {% if variant.available %} 1 {% else %} 0 {% endif %}; {% endfor %}{% endif %}  gsProductCSID = "{{ product.id }}"; gsDefaultV = "{{ product.selected_or_first_available_variant.id }}"; </script><script  type="text/javascript" src="https://gravity-software.com/js/shopify/pac_shop30732.js?v=9c0749c28d89874b2c1e3cc7868d15e2"></script>
-<!-- Coming Soon code end. Do not change GSEND --></head>
+<!-- Coming Soon code end. Do not change GSEND -->{% render "rale-render" %}
+</head>
 
   <body data-instant-intensity="viewport" 
     {% unless settings.lazy_load %}
