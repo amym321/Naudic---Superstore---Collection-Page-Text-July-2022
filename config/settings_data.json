@@ -575,8 +575,8 @@
         "settings": {
           "show_announcement": true,
           "homepage_announcement": false,
-          "new_collection_text": "La Casa",
-          "new_collection_link": "shopify:\/\/collections\/la-casa",
+          "new_collection_text": "Caribbean Club",
+          "new_collection_link": "shopify:\/\/collections\/caribbean-club",
           "announcement_text": "Free shipping for Australian orders over $150",
           "announcement_text_mobile": "",
           "announcement_link": "",
@@ -776,15 +776,15 @@
           "autoplay_duration": 5,
           "slideshow_height": "large",
           "left_banner_width": 60,
-          "left_banner_img": "shopify:\/\/shop_images\/WEBSITE_Front_Banner_3_04f351b3-1d67-49ba-8d6a-ff263d72f715.png",
-          "left_banner_link": "shopify:\/\/collections\/la-casa",
+          "left_banner_img": "shopify:\/\/shop_images\/WEBSITE_Front_Banner_3_82e18c9c-ec94-4226-b1e5-1b91d457a647.png",
+          "left_banner_link": "shopify:\/\/collections\/caribbean-club",
           "best_sellers": true,
-          "best_sellers_img": "shopify:\/\/shop_images\/WEBSITE_Front_2_3_992d9de9-c010-498a-81ed-dccf9a38b3ae.png",
+          "best_sellers_img": "shopify:\/\/shop_images\/WEBSITE_Front_2_3_1a78f047-1cc1-4f93-b59e-e76ee91ab558.png",
           "best_seller_text": "Best Sellers",
           "best_seller_link": "shopify:\/\/collections\/new-arrivals",
           "best_sellers_width": 20,
           "outlet": true,
-          "outlet_img": "shopify:\/\/shop_images\/WEBSITE_Front_2_4_511ed65c-a364-41bd-8e3f-fa407ee6efbd.png",
+          "outlet_img": "shopify:\/\/shop_images\/WEBSITE_Front_2_4_51d77dcb-ce8c-45a3-9a49-6714c6d27b96.png",
           "outlet_text": "SALE",
           "outlet_link": "shopify:\/\/collections\/sale",
           "outlet_width": 20
@@ -980,7 +980,7 @@
           "1584153976731-1": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_1_d7d57d8f-66e5-47f4-9ad6-0068260db29a.png",
+              "image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_3_30faa51b-aaf6-41ca-bc18-f499fc04c2d5.png",
               "preheading": "",
               "preheading_color": "#4d4d4d",
               "title": "",
@@ -1003,7 +1003,7 @@
           "1584153976731-0": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_437dfab5-3a06-4b8b-890a-0815a9b11b4e.png",
+              "image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_4_1b00ba1c-ce29-4e6a-9bb8-a10e6354629d.png",
               "preheading": "",
               "preheading_color": "#4d4d4d",
               "title": "",
@@ -1161,19 +1161,19 @@
             "type": "meganav_images",
             "settings": {
               "meganav_trigger": "Shop",
-              "image_1": "shopify:\/\/shop_images\/NUM03175.jpg",
+              "image_1": "shopify:\/\/shop_images\/NUM07613-2.jpg",
               "image_title_1": "New to naudic",
               "text_1": "",
               "link_1": "shopify:\/\/products\/cyprus-top-caribbean-patch-orange",
               "position_1": "last",
               "size_1": "small",
-              "image_2": "shopify:\/\/shop_images\/NUM03138.jpg",
+              "image_2": "shopify:\/\/shop_images\/NUM03988_e19df46e-7502-42b6-88e8-9fc6928e833a_1.jpg",
               "image_title_2": "",
               "text_2": "",
               "link_2": "shopify:\/\/products\/mabel-dress-maya-blue",
               "position_2": "last",
               "size_2": "small",
-              "image_3": "shopify:\/\/shop_images\/NUM03067.jpg",
+              "image_3": "shopify:\/\/shop_images\/NUM07600_26b58eff-bf19-4b22-b1d6-4d1aa42fa1a6.jpg",
               "image_title_3": "",
               "text_3": "",
               "link_3": "shopify:\/\/products\/zaza-dress-salsa-orange",
@@ -1209,10 +1209,10 @@
             "type": "meganav_images",
             "settings": {
               "meganav_trigger": "Collections",
-              "image_1": "shopify:\/\/shop_images\/WEBSITE_Front_Banner_3_04f351b3-1d67-49ba-8d6a-ff263d72f715.png",
-              "image_title_1": "New collection: La Casa",
+              "image_1": "shopify:\/\/shop_images\/WEBSITE_Front_Banner_3_82e18c9c-ec94-4226-b1e5-1b91d457a647.png",
+              "image_title_1": "New collection: Caribbean Club",
               "text_1": "",
-              "link_1": "shopify:\/\/collections\/la-casa",
+              "link_1": "shopify:\/\/collections\/caribbean-club",
               "position_1": "last",
               "size_1": "medium",
               "image_title_2": "",
@@ -1598,11 +1598,11 @@
           "e6a8a365-8ffd-4874-83c0-3ecb5fa012ec": {
             "type": "slide",
             "settings": {
-              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_2_2b62c87a-eee8-4f68-abd5-1e602deb1047.png",
+              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_028dba06-74fd-4334-b2a6-5fedbf89986a.png",
               "title": "",
               "text": "",
               "color": "#ffffff",
-              "link": "shopify:\/\/collections\/la-casa",
+              "link": "shopify:\/\/collections\/caribbean-club",
               "text_alignment": "center",
               "button_one_label": "",
               "button_one_link": "",
@@ -1624,7 +1624,7 @@
           "42e12651-bb5b-4f5b-9963-78693de35492": {
             "type": "slide",
             "settings": {
-              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_3_a0017681-83af-4b47-8377-94904dc53b8a.png",
+              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_1_8b3e74a9-5076-4bd0-8003-fd6769879e90.png",
               "title": "BEST SELLERS",
               "text": "",
               "color": "#ffffff",
@@ -1650,7 +1650,7 @@
           "6043a1f7-d684-44d4-b4d8-084ea9fc6d59": {
             "type": "slide",
             "settings": {
-              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_4_5f6856f2-6fcb-453a-ad0d-f67b4126b7f7.png",
+              "background_image": "shopify:\/\/shop_images\/WEBSITE_Shop_Tops_Square_2_7e4699d4-9c14-4558-a079-690fd7ed9b5a.png",
               "title": "SALE",
               "text": "",
               "color": "#ffffff",
