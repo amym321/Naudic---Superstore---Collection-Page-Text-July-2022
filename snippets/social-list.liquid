@@ -97,12 +97,24 @@
     {%- endif -%}
 
     {%- if settings.social_rss != blank -%}
-      {%
-        include 'social-link',
-        id: 'rss',
-        title: 'general.social.rss' | t,
-        url: settings.social_rss
-      %}
+      {% include 'social-link', id: 'rss', title: 'general.social.rss', url: settings.social_rss %}
     {%- endif -%}
   </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+            include 'social-link',
+            id: 'rss',
+            title: 'general.social.rss' | t,
+            url: settings.social_rss
+          %}
+  to: "{% include 'social-link', id: 'rss', title: 'general.social.rss', url: settings.social_rss
+    %}"
+  position: 2528..2621
+{% endcomment %}

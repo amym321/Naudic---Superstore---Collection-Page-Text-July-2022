@@ -43,7 +43,7 @@
   {% assign article_count = blog.articles.size %}
 {% endif %}
 
-{%- capture 'button_class' -%}
+{%- capture button_class -%}
   {{ button_style.first | prepend: 'button-' }}
 {%- endcapture -%}
 
@@ -229,4 +229,13 @@
   ]
 }
 
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- capture 'button_class' -%}"
+  to: "{%- capture button_class -%}"
+  position: 1437..1465
+{%- endcomment -%}

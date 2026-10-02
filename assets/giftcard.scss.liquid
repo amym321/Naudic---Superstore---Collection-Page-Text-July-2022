@@ -108,7 +108,7 @@
       At this point we should have valid a valid weight and style variables,
       we can continue onto the new iteration if it isnt valid.
     {% endcomment %}
-    {% if font_weight_name contains 'initial' != true and font_weight_name contains 'lighter' != true and font_weight_name contains 'bolder' != true %}
+    {% if font_weight_name contains 'initial' and font_weight_name contains 'lighter' and font_weight_name contains 'bolder' %}
       {% continue %}
     {% endif %}
     {% if font_style_name != 'initial' and font_style_name != 'italic' %}
@@ -2797,3 +2797,15 @@ h6 {
   }
 }
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if font_weight_name contains 'initial' != true and font_weight_name contains
+    'lighter' != true and font_weight_name contains 'bolder' != true %}"
+  to: "{% if font_weight_name contains 'initial' and font_weight_name contains 'lighter'
+    and font_weight_name contains 'bolder' %}"
+  position: 4735..4858
+{% endcomment %}

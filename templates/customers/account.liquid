@@ -91,11 +91,22 @@
           </a>
         {% else %}
           <a href="/account/addresses">
-            {{ 'customers.account.view_addresses' | t, count: customer.addresses_count }}
+            {{ 'customers.account.view_addresses' | t: count: customer.addresses_count }}
           </a>
         {% endif %}
       </p>
     </div>
   </div>
 </section>
-<a href="{{ shop.url }}/account/logout" class="btn" style="margin-top:1em">Logout</a>
+<a href="{{ shop.url }}/account/logout" class="btn" style="margin-top:1em">Logout</a>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ 'customers.account.view_addresses' | t, count: customer.addresses_count
+    }}"
+  to: "{{ 'customers.account.view_addresses' | t: count: customer.addresses_count
+    }}"
+  position: 3088..3165
+{%- endcomment -%}
